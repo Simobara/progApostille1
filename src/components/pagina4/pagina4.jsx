@@ -1,16 +1,14 @@
 // src/pages/ApostilleShowcase.jsx
 export default function ApostilleShowcase() {
-  // 👇 Metti qui i tuoi 4 file immagine (per ora sono esempi)
   const images = [
-    { src: "/images/apostille1.jpg", alt: "Apostille Giappone" },
-    { src: "/images/apostille2.jpg", alt: "Apostille Hong Kong" },
-    { src: "/images/apostille3.jpg", alt: "Apostille Cal (USA)" },
-    { src: "/images/apostille4.jpg", alt: "Apostille Isole Cayman" },
+    { src: "/images/apostille1.png", alt: "Apost Giappone" },
+    { src: "/images/apostille2.png", alt: "Apost HongKong" },
+    { src: "/images/apostille3.png", alt: "Apost Usa" },
+    { src: "/images/apostille4.png", alt: "Apost Cayman" },
   ];
 
   return (
     <main className="mt-[12rem] mb-[12rem]">
-      {" "}
       {/* spazio per la Navbar fixed (h-20 ≈ 80px) */}
       <section className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Titolo + Sottotitolo */}
@@ -28,15 +26,16 @@ export default function ApostilleShowcase() {
           {images.map((img, i) => (
             <figure
               key={i}
-              className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 
+                         hover:shadow-lg transition-all duration-300 ease-in-out"
             >
-              <div className="w-full aspect-[4/3] bg-gray-50 flex items-center justify-center">
+              <div className="w-full aspect-[4/3] bg-gray-50 flex items-center justify-center overflow-hidden">
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain"
                   draggable="false"
+                  className="max-h-full max-w-full object-contain transform transition-transform duration-300 ease-in-out hover:scale-110"
                 />
               </div>
               <figcaption className="px-4 py-3 text-center text-sm text-gray-600">
