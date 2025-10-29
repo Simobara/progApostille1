@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------
+   Custom base + font styles
+--------------------------- */
+:root {
+  --brand-blue: #0b4ea2;
+  --text-dark: #111827;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+/* Puoi aggiungere regole extra qui se vuoi */

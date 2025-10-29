@@ -1,0 +1,53 @@
+# ======================================
+# 🚀 GITIGNORE — React + Vite + Tailwind
+# ======================================
+
+# dependencies
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# build output
+dist/
+build/
+.out/
+.vite/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# system files
+.DS_Store
+Thumbs.db
+
+# editor folders
+.vscode/
+.idea/
+*.swp
+
+# test coverage
+coverage/
+
+# temporary files
+*.tmp
+*.log
+*.cache
+*.lock
+
+# Tailwind JIT cache
+.tailwind/
+tailwind.config.backup.js
+
+# misc
+*.local
+*.bak
+*.old
