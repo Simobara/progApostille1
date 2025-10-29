@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#ffd54d"/>
+      <stop offset="60%" stop-color="#f5c423"/>
+      <stop offset="100%" stop-color="#d9a909"/>
+    </radialGradient>
+  </defs>
+
+  <!-- DENTELLATURA: un dente + 24 copie ruotate -->
+  <g transform="translate(32,32)">
+    <polygon id="tooth" points="0,-30 4,-22 -4,-22" fill="#d9a909"/>
+    <use href="#tooth" transform="rotate(15)"/>
+    <use href="#tooth" transform="rotate(30)"/>
+    <use href="#tooth" transform="rotate(45)"/>
+    <use href="#tooth" transform="rotate(60)"/>
+    <use href="#tooth" transform="rotate(75)"/>
+    <use href="#tooth" transform="rotate(90)"/>
+    <use href="#tooth" transform="rotate(105)"/>
+    <use href="#tooth" transform="rotate(120)"/>
+    <use href="#tooth" transform="rotate(135)"/>
+    <use href="#tooth" transform="rotate(150)"/>
+    <use href="#tooth" transform="rotate(165)"/>
+    <use href="#tooth" transform="rotate(180)"/>
+    <use href="#tooth" transform="rotate(195)"/>
+    <use href="#tooth" transform="rotate(210)"/>
+    <use href="#tooth" transform="rotate(225)"/>
+    <use href="#tooth" transform="rotate(240)"/>
+    <use href="#tooth" transform="rotate(255)"/>
+    <use href="#tooth" transform="rotate(270)"/>
+    <use href="#tooth" transform="rotate(285)"/>
+    <use href="#tooth" transform="rotate(300)"/>
+    <use href="#tooth" transform="rotate(315)"/>
+    <use href="#tooth" transform="rotate(330)"/>
+    <use href="#tooth" transform="rotate(345)"/>
+  </g>
+
+  <!-- DISCO INTERNO -->
+  <circle cx="32" cy="32" r="24" fill="url(#g)" stroke="#a67c00" stroke-width="2"/>
+
+  <!-- ANELLO INTERNO PUNTINATO -->
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#8c6a00"
+          stroke-width="2" stroke-dasharray="2 3" stroke-linecap="round"/>
+
+  <!-- CHECK MARK -->
+  <path d="M24 33 l5 5 11 -11" fill="none" stroke="#1b1b1b" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

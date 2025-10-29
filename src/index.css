@@ -5,6 +5,7 @@
 /* --------------------------
    Custom base + font styles
 --------------------------- */
+
 :root {
   --brand-blue: #0b4ea2;
   --text-dark: #111827;
@@ -66,4 +67,17 @@ body {
     rgba(0, 0, 0, 0.3) 95%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+/* Cursore base su tutta la pagina */
+.cursor-apostille {
+  cursor: url("/cursors/apostille.svg") 16 16,
+    url("/cursors/apostille.png") 16 16, auto;
+}
+
+/* Su elementi cliccabili manteniamo “pointer” ma con la nostra icona */
+.cursor-apostille a,
+.cursor-apostille button,
+.cursor-apostille [role="button"] {
+  cursor: url("/cursors/apostille.svg") 16 16,
+    url("/cursors/apostille.png") 16 16, pointer;
 }

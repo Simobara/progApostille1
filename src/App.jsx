@@ -8,6 +8,7 @@ import Sidebar from "./components/pagina2/pagina2";
 
 //    userai <Navbar logoSrc="/logo-apos.png" ... />
 import heroImg from "./assets/apostille.png";
+import ApostilleFollower from "./components/apostilleCursor/apostilleFoll";
 import GuaranteeBanner from "./components/pagina3/pagina3";
 import ApostilleShowcase from "./components/pagina4/pagina4";
 import PreventivoApostille from "./components/pagina5/pagina5";
@@ -15,11 +16,15 @@ import Footer from "./components/pfooter/pfooter";
 import "./index.css";
 
 export default function App() {
+  const isTouch = () => window.matchMedia("(pointer: coarse)").matches;
   // pag apostille:https://apostille.ong/it/
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-24">
       {/* NAVBAR */}
       <Navbar logoSrc={logoMain} active="Apostille" />
+      {!isTouch() && (
+        <ApostilleFollower size={48} src="/cursors/apostille.png" />
+      )}
 
       {/* HERO */}
       <main className=" max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:py-16">
