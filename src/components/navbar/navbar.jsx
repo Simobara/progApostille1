@@ -10,7 +10,10 @@ export default function Navbar({ logoSrc }) {
   ];
 
   return (
-    <header className="w-full bg-white shadow-sm font-[Poppins] pt-4">
+    <header
+      className="w-full bg-white shadow-sm font-[Poppins] pt-4
+                 fixed top-0 left-0 z-50"
+    >
       <nav className="max-w-7xl mx-auto h-20 flex items-center justify-between px-8">
         {/* LOGO */}
         <a href="#" className="flex items-center gap-3 shrink-0">

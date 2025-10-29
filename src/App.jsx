@@ -9,16 +9,17 @@ import Sidebar from "./components/pagina2/pagina2";
 //    userai <Navbar logoSrc="/logo-apos.png" ... />
 
 import heroImg from "./assets/apostille.png";
+import GuaranteeBanner from "./components/pagina3/pagina3";
 import "./index.css";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 pt-24">
       {/* NAVBAR */}
       <Navbar logoSrc={logoMain} active="Apostille" />
 
       {/* HERO */}
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
+      <main className=" max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* LEFT copy */}
           <div className="lg:col-span-7">
@@ -95,6 +96,16 @@ export default function App() {
         </div>
       </main>
       <Sidebar />
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
+        <GuaranteeBanner />
+        {/* oppure testo personalizzato */}
+        {/* 
+      <GuaranteeBanner
+        message={<>Servizio coperto dalla nostra <em>Garanzia 100%</em> — partner: </>}
+        brand="ApostilleGarant™"
+      />
+      */}
+      </section>
     </div>
   );
 }
