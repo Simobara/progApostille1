@@ -27,7 +27,7 @@ export default function App() {
           {/* LEFT copy */}
           <div className="lg:col-span-7">
             <h1 className="text-[60px] md:text-[80px] lg:text-[96px] font-extrabold leading-[0.9] tracking-tight text-[#0b0b0b]">
-              APOSTILLE di documenti peruviani
+              APOSTILLE documenti peruviani
             </h1>
 
             <h2 className="mt-4 text-[28px] md:text-[34px] lg:text-[40px] font-semibold text-[#4b4b4b] leading-snug max-w-3xl">
