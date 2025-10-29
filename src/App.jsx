@@ -32,15 +32,11 @@ export default function App() {
               <span className="block lg:inline">
                 Invio con corriere in tutto il Perù e a qualsiasi paese.
               </span>
+              <br />
+              <span className="block lg:inline text-[#0b4ea2]">
+                Valido per qualsiasi documento e da qualsiasi paese.
+              </span>
             </h1>
-
-            <h2 className="mt-3 text-[40px] md:text-[52px] lg:text-[64px] font-extrabold leading-[0.95] tracking-tight">
-              da <span className="font-extrabold">qualsiasi documento</span>
-            </h2>
-
-            <h3 className="mt-2 text-[40px] md:text-[52px] lg:text-[64px] font-extrabold leading-[0.95] tracking-tight">
-              da <span className="font-extrabold">qualsiasi paese</span>
-            </h3>
 
             <p className="mt-7 text-gray-500 text-lg md:text-xl max-w-xl">
               Servizio di Apostille accreditato. Non è richiesta alcuna visita
