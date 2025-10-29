@@ -13,11 +13,8 @@ export default function Navbar({ logoSrc }) {
   ];
 
   return (
-    <header
-      className="w-full bg-white shadow-sm font-[Poppins] pt-4
-                 fixed top-0 left-0 z-50"
-    >
-      <nav className="max-w-7xl mx-auto h-20 flex items-center justify-between px-8">
+    <header className="w-full bg-white shadow-sm font-[Poppins] pt-4 fixed top-0 left-0 z-50">
+      <nav className="max-w-7xl mx-auto h-20 flex items-center justify-between px-6 md:px-8">
         {/* LOGO */}
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img
@@ -29,32 +26,31 @@ export default function Navbar({ logoSrc }) {
         </a>
 
         {/* MENU DESKTOP */}
-        <div className="hidden lg:flex justify-center flex-grow mx-10">
-          <div className="grid grid-cols-7 w-full max-w-3xl text-center">
-            <div></div>
+        <div className="hidden lg:flex items-center justify-center flex-grow mx-6">
+          <div className="flex flex-wrap items-center justify-center gap-8">
             {items.map((label, index) => (
               <a
                 key={index}
                 href="#"
-                className="text-[16px] font-semibold uppercase text-[#4b4b4b] hover:text-[#0b4ea2] transition-colors tracking-wide"
+                className="text-[15px] md:text-[16px] font-semibold uppercase text-[#4b4b4b]
+                           hover:text-[#0b4ea2] transition-colors tracking-wide whitespace-nowrap"
               >
                 {label}
               </a>
             ))}
-            <div></div>
           </div>
         </div>
 
         {/* BOTTONE DESKTOP */}
         <button
-          className="hidden lg:flex bg-[#0b4ea2] text-white font-extrabold uppercase text-[16px]
-                     px-[1rem] py-[1rem] rounded-full hover:brightness-110
-                     transition-all shadow-lg items-center justify-center select-none"
+          className="hidden lg:flex bg-[#0b4ea2] text-white font-extrabold uppercase text-[15px]
+                     px-[2.4rem] py-[1.2rem] rounded-full hover:brightness-110
+                     transition-all shadow-lg items-center justify-center select-none whitespace-nowrap"
         >
           OTTIENI L&apos;APOSTILLE
         </button>
 
-        {/* HAMBURGER ICON — MOBILE */}
+        {/* ICONA MENU MOBILE */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden text-[#0b4ea2] p-2 rounded-md hover:bg-gray-100 transition"
@@ -63,7 +59,7 @@ export default function Navbar({ logoSrc }) {
         </button>
       </nav>
 
-      {/* OVERLAY OSCURANTE */}
+      {/* OVERLAY SCURO MOBILE */}
       <div
         onClick={() => setIsOpen(false)}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
@@ -71,14 +67,13 @@ export default function Navbar({ logoSrc }) {
         } lg:hidden`}
       ></div>
 
-      {/* MENU MOBILE A COMPARSA (SLIDE-IN) */}
+      {/* MENU MOBILE A COMPARSA */}
       <div
         className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl border-l border-gray-200
                     transform transition-transform duration-300 ease-in-out lg:hidden
                     ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col h-full py-10 px-6 space-y-6">
-          {/* Logo piccolo in alto */}
           <div className="flex justify-between items-center mb-4">
             <img
               src={logoSrc}
@@ -94,14 +89,14 @@ export default function Navbar({ logoSrc }) {
             </button>
           </div>
 
-          {/* Link menu */}
           <nav className="flex flex-col space-y-5">
             {items.map((label, index) => (
               <a
                 key={index}
                 href="#"
                 onClick={() => setIsOpen(false)}
-                className="text-[18px] font-semibold uppercase text-[#4b4b4b] hover:text-[#0b4ea2] transition-colors tracking-wide"
+                className="text-[18px] font-semibold uppercase text-[#4b4b4b]
+                           hover:text-[#0b4ea2] transition-colors tracking-wide"
               >
                 {label}
               </a>

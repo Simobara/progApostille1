@@ -26,8 +26,12 @@ export default function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* LEFT copy */}
           <div className="lg:col-span-7">
-            <h1 className="text-[60px] md:text-[80px] lg:text-[96px] font-extrabold leading-[0.9] tracking-tight text-[#0b0b0b]">
-              APOSTILLE documenti peruviani
+            <h1 className="text-[60px] md:text-[80px] lg:text-[96px] font-extrabold leading-[0.9] tracking-tight text-[#0b0b0b] text-center">
+              APOSTILLE
+              <br />
+              documenti
+              <br />
+              peruviani
             </h1>
 
             <h2 className="mt-4 text-[28px] md:text-[34px] lg:text-[40px] font-semibold text-[#4b4b4b] leading-snug max-w-3xl">
