@@ -41,12 +41,12 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Email Address..."
-              className="flex-1 px-6 py-2 rounded-l-md bg-[#1c252b] text-gray-200 placeholder-gray-500
+              className="flex-1 px-2 py-2 rounded-l-md bg-[#1c252b] text-gray-200 placeholder-gray-500
                          focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-[#2563eb] text-white font-semibold rounded-r-md hover:brightness-110 transition"
+              className="px-2 py-3 bg-[#2563eb] text-white font-semibold rounded-r-md hover:brightness-110 transition"
             >
               SUBSCRIBE
             </button>
