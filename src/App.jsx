@@ -11,6 +11,8 @@ import Sidebar from "./components/pagina2/pagina2";
 import heroImg from "./assets/apostille.png";
 import GuaranteeBanner from "./components/pagina3/pagina3";
 import ApostilleShowcase from "./components/pagina4/pagina4";
+import PreventivoApostille from "./components/pagina5/pagina5";
+import Footer from "./components/pfooter/pfooter";
 import "./index.css";
 
 export default function App() {
@@ -44,7 +46,7 @@ export default function App() {
             <div className="mt-9">
               <a
                 href="#"
-                className="inline-block rounded-full border-2 border-[#0b4ea2] px-10 md:px-12 py-3.5 font-semibold text-[#0b4ea2] text-base md:text-lg hover:bg-[#f5fbff] transition"
+                className="inline-block rounded-full border-2 border-[#0b4ea2] m-4 px-4 md:px-4 py-3 font-semibold text-[#0b4ea2] text-base md:text-lg hover:bg-[#f5fbff] transition"
               >
                 OTTIENI L&apos;APOSTILLE
               </a>
@@ -107,7 +109,9 @@ export default function App() {
       */}
         </section>
         <ApostilleShowcase />
+        <PreventivoApostille />
       </main>
+      <Footer />
     </div>
   );
 }
