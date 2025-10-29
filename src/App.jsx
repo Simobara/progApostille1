@@ -10,6 +10,7 @@ import Sidebar from "./components/pagina2/pagina2";
 
 import heroImg from "./assets/apostille.png";
 import GuaranteeBanner from "./components/pagina3/pagina3";
+import ApostilleShowcase from "./components/pagina4/pagina4";
 import "./index.css";
 
 export default function App() {
@@ -94,18 +95,19 @@ export default function App() {
             />
           </svg>
         </div>
-      </main>
-      <Sidebar />
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
-        <GuaranteeBanner />
-        {/* oppure testo personalizzato */}
-        {/* 
+        <Sidebar />
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
+          <GuaranteeBanner />
+          {/* oppure testo personalizzato */}
+          {/* 
       <GuaranteeBanner
         message={<>Servizio coperto dalla nostra <em>Garanzia 100%</em> — partner: </>}
         brand="ApostilleGarant™"
       />
       */}
-      </section>
+        </section>
+        <ApostilleShowcase />
+      </main>
     </div>
   );
 }
