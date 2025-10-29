@@ -34,7 +34,7 @@ export default function App() {
               </span>
               <br />
               <span className="block lg:inline text-[#0b4ea2]">
-                Valido per qualsiasi documento e da qualsiasi paese.
+                {/* Valido per qualsiasi documento e da qualsiasi paese. */}
               </span>
             </h1>
 
