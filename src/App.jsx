@@ -1,8 +1,11 @@
 // src/App.jsx
 import Navbar from "./components/navbar/navbar";
 
-import logo from "../src/assets/apostille.png";
-// ➜ se invece è in public/, elimina la riga sopra e NON importare nulla:
+import { FaWhatsapp } from "react-icons/fa";
+import logoMain from "./assets/apostilleLogoMain.png";
+import Sidebar from "./components/pagina2/pagina2";
+// ➜ se invece è in public/, import { FaWhatsapp } from "react-icons/fa";
+
 //    userai <Navbar logoSrc="/logo-apos.png" ... />
 
 import heroImg from "./assets/apostille.png";
@@ -12,7 +15,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* NAVBAR */}
-      <Navbar logoSrc={logo /* oppure "/logo-apos.png" */} active="Apostille" />
+      <Navbar logoSrc={logoMain} active="Apostille" />
 
       {/* HERO */}
       <main className="max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
@@ -65,6 +68,17 @@ export default function App() {
           </div>
         </div>
 
+        {/* BOTTONE WHATSAPP FISSO A DESTRA */}
+        <a
+          href="https://wa.me/393471234567?text=Salve!%20Vorrei%20ottenere%20un%20preventivo%20gratuito%20per%20un%20apostille."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold px-5 py-3 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200 z-[9999]"
+        >
+          <FaWhatsapp className="text-2xl" />
+          <span>Ottieni un preventivo gratuito</span>
+        </a>
+
         {/* onda azzurra */}
         <div className="mt-12 lg:mt-14">
           <svg
@@ -80,6 +94,7 @@ export default function App() {
           </svg>
         </div>
       </main>
+      <Sidebar />
     </div>
   );
 }

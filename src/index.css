@@ -22,5 +22,48 @@ body {
   color: var(--text-dark);
   background-color: #ffffff;
 }
+/* --- LOOP PERFETTO A DUE TRACCE --- */
+@keyframes logoMove {
+  0% {
+    transform: translateX(110vw); /* parte fuori da destra */
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120vw); /* esce completamente a sinistra */
+    opacity: 0;
+  }
+}
 
-/* Puoi aggiungere regole extra qui se vuoi */
+.animate-logo {
+  animation: logoMove 16s linear infinite;
+}
+/* Maschera di fade morbido ai bordi */
+.mask-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 5%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(0, 0, 0, 0.3) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 5%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(0, 0, 0, 0.3) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}

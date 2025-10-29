@@ -1,5 +1,6 @@
 // src/components/Navbar.jsx
-export default function Navbar() {
+
+export default function Navbar({ logoSrc }) {
   const items = [
     "Apostille",
     "Servizi",
@@ -9,12 +10,12 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-white shadow-sm font-[Poppins]">
+    <header className="w-full bg-white shadow-sm font-[Poppins] pt-4">
       <nav className="max-w-7xl mx-auto h-20 flex items-center justify-between px-8">
         {/* LOGO */}
         <a href="#" className="flex items-center gap-3 shrink-0">
           <img
-            src="/logo-apos.png"
+            src={logoSrc}
             alt="Logo Apostille"
             className="h-12 w-auto select-none"
             draggable="false"
