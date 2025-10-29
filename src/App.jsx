@@ -31,11 +31,11 @@ export default function App() {
             </h1>
 
             <h2 className="mt-4 text-[28px] md:text-[34px] lg:text-[40px] font-semibold text-[#4b4b4b] leading-snug max-w-3xl">
-              Invio con corriere in tutto il Perù e a qualsiasi paese. Valido
-              per qualsiasi documento ufficiale, notarile o privato.
+              Invio in tutto il Perù e a qualsiasi paese.
             </h2>
 
             <p className="mt-7 text-gray-500 text-lg md:text-xl max-w-xl">
+              Valido per qualsiasi documento ufficiale, notarile o privato.
               Servizio di Apostille accreditato.
             </p>
 
