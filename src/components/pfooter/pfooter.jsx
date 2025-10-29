@@ -37,11 +37,11 @@ export default function Footer() {
             Sign up to our Magazine and receive our offers and news right in
             your Inbox! Get priority access to new features and tools.
           </p>
-          <form className="flex flex-col sm:flex-row w-full">
+          <form className="flex flex-col sm:flex-row w-[2rem]">
             <input
               type="email"
               placeholder="Email Address..."
-              className="flex-1 px-4 py-3 rounded-l-md bg-[#1c252b] text-gray-200 placeholder-gray-500
+              className="flex-1 px-6 py-2 rounded-l-md bg-[#1c252b] text-gray-200 placeholder-gray-500
                          focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
             />
             <button
