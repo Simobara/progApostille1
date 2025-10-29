@@ -22,25 +22,21 @@ export default function App() {
       <Navbar logoSrc={logoMain} active="Apostille" />
 
       {/* HERO */}
-      <main className=" max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
+      <main className=" max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* LEFT copy */}
           <div className="lg:col-span-7">
-            <h1 className="text-[52px] md:text-[64px] lg:text-[72px] font-extrabold leading-[0.95] tracking-tight">
-              APOSTILLE di documenti peruviani.
-              <br />
-              <span className="block lg:inline">
-                Invio con corriere in tutto il Perù e a qualsiasi paese.
-              </span>
-              <br />
-              <span className="block lg:inline text-[#0b4ea2]">
-                {/* Valido per qualsiasi documento e da qualsiasi paese. */}
-              </span>
+            <h1 className="text-[60px] md:text-[80px] lg:text-[96px] font-extrabold leading-[0.9] tracking-tight text-[#0b0b0b]">
+              APOSTILLE di documenti peruviani
             </h1>
 
+            <h2 className="mt-4 text-[28px] md:text-[34px] lg:text-[40px] font-semibold text-[#4b4b4b] leading-snug max-w-3xl">
+              Invio con corriere in tutto il Perù e a qualsiasi paese. Valido
+              per qualsiasi documento ufficiale, notarile o privato.
+            </h2>
+
             <p className="mt-7 text-gray-500 text-lg md:text-xl max-w-xl">
-              Servizio di Apostille accreditato. Non è richiesta alcuna visita
-              personale.
+              Servizio di Apostille accreditato.
             </p>
 
             <div className="mt-9">
