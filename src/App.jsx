@@ -42,7 +42,7 @@ export default function App() {
             <div className="mt-9">
               <a
                 href="#"
-                className="inline-block rounded-full border-2 border-[#0b4ea2] m-4 px-4 md:px-4 py-3 font-semibold text-[#0b4ea2] text-base md:text-lg hover:bg-[#f5fbff] transition"
+                className="inline-block rounded-full border-2 border-[#0b4ea2] py-2 px-4 md:px-2 font-semibold text-[#0b4ea2] text-base md:text-lg hover:bg-[#f5fbff] transition"
               >
                 OTTIENI L&apos;APOSTILLE
               </a>

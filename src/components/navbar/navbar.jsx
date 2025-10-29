@@ -48,7 +48,7 @@ export default function Navbar({ logoSrc }) {
         {/* BOTTONE DESKTOP */}
         <button
           className="hidden lg:flex bg-[#0b4ea2] text-white font-extrabold uppercase text-[16px]
-                     px-[3rem] py-[1.4rem] rounded-full hover:brightness-110
+                     px-[1rem] py-[1rem] rounded-full hover:brightness-110
                      transition-all shadow-lg items-center justify-center select-none"
         >
           OTTIENI L&apos;APOSTILLE
