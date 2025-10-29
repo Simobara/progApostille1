@@ -23,7 +23,7 @@ export default function App() {
       {/* NAVBAR */}
       <Navbar logoSrc={logoMain} active="Apostille" />
       {!isTouch() && (
-        <ApostilleFollower size={48} src="/cursors/apostille.png" />
+        <ApostilleFollower size={68} src="/cursors/apostille.png" />
       )}
 
       {/* HERO */}
