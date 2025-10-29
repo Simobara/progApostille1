@@ -7,7 +7,6 @@ import Sidebar from "./components/pagina2/pagina2";
 // ➜ se invece è in public/, import { FaWhatsapp } from "react-icons/fa";
 
 //    userai <Navbar logoSrc="/logo-apos.png" ... />
-
 import heroImg from "./assets/apostille.png";
 import GuaranteeBanner from "./components/pagina3/pagina3";
 import ApostilleShowcase from "./components/pagina4/pagina4";
@@ -16,6 +15,7 @@ import Footer from "./components/pfooter/pfooter";
 import "./index.css";
 
 export default function App() {
+  // pag apostille:https://apostille.ong/it/
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-24">
       {/* NAVBAR */}
@@ -27,7 +27,11 @@ export default function App() {
           {/* LEFT copy */}
           <div className="lg:col-span-7">
             <h1 className="text-[52px] md:text-[64px] lg:text-[72px] font-extrabold leading-[0.95] tracking-tight">
-              APOSTILLE di <span className="block lg:inline">1 giorno</span>
+              APOSTILLE di documenti peruviani.
+              <br />
+              <span className="block lg:inline">
+                Invio con corriere in tutto il Perù e a qualsiasi paese.
+              </span>
             </h1>
 
             <h2 className="mt-3 text-[40px] md:text-[52px] lg:text-[64px] font-extrabold leading-[0.95] tracking-tight">
