@@ -25,17 +25,22 @@ function FlagPE({ className = "w-6 h-4 rounded-sm" }) {
 
 export default function Navbar({ logoSrc }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false); // NEW
   const { lang, setLang } = useLang();
   const t = useT();
+
+  // Ombra solo quando si scrolla
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4); // soglia minima
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // inizializza allo stato corrente
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Blocca lo scroll della pagina quando il drawer è aperto
   useEffect(() => {
     const root = document.documentElement;
-    if (isOpen) {
-      root.style.overflow = "hidden";
-    } else {
-      root.style.overflow = "";
-    }
+    root.style.overflow = isOpen ? "hidden" : "";
     return () => {
       root.style.overflow = "";
     };
@@ -56,7 +61,9 @@ export default function Navbar({ logoSrc }) {
           }`}
       >
         <FlagIT />
-        <span className="text-xs font-semibold uppercase text-[#4b4b4b]">IT</span>
+        <span className="text-xs font-semibold uppercase text-[#4b4b4b]">
+          IT
+        </span>
       </button>
       <button
         aria-label="Español (Perú)"
@@ -69,23 +76,30 @@ export default function Navbar({ logoSrc }) {
           }`}
       >
         <FlagPE />
-        <span className="text-xs font-semibold uppercase text-[#4b4b4b]">PE</span>
+        <span className="text-xs font-semibold uppercase text-[#4b4b4b]">
+          PE
+        </span>
       </button>
     </div>
   );
 
   return (
     <header
-      className="
-        fixed inset-x-0 top-0 
-        z-[10010]
-        bg-white shadow-sm
+      className={`
+        fixed inset-x-0 top-0 z-[10010]
+        bg-white
+        ${scrolled ? "shadow-[0_14px_40px_rgba(0,0,0,0.34)]" : "shadow-none"}
+        transition-shadow duration-300
         font-[Poppins] pt-4
-      "
+      `}
     >
       <nav className="max-w-7xl mx-auto h-20 flex items-center justify-between px-6 md:px-8">
         {/* LOGO */}
-        <a href="#" className="flex items-center gap-3 shrink-0" aria-label="Home">
+        <a
+          href="#"
+          className="flex items-center gap-3 shrink-0"
+          aria-label="Home"
+        >
           <img
             src={logoSrc}
             alt="Logo Apostille"
@@ -131,7 +145,7 @@ export default function Navbar({ logoSrc }) {
         </div>
       </nav>
 
-      {/* OVERLAY MOBILE (grigio scuro, sotto il drawer) */}
+      {/* OVERLAY MOBILE */}
       <div
         onClick={() => setIsOpen(false)}
         className={`fixed inset-0 z-[10020] bg-gray-900/70 backdrop-blur-sm transition-opacity duration-300 lg:hidden
@@ -143,7 +157,7 @@ export default function Navbar({ logoSrc }) {
         aria-hidden="true"
       />
 
-      {/* DRAWER MOBILE (sopra overlay e sopra la navbar) */}
+      {/* DRAWER MOBILE */}
       <div
         className={`fixed top-0 right-0 z-[10030] h-full w-4/5 max-w-sm 
                     bg-white shadow-2xl border-l border-gray-200 
