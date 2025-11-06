@@ -116,7 +116,7 @@ export default function PreventivoApostille() {
                 className="w-full h-12 rounded-lg bg-[#5897FF] text-white font-semibold
                            hover:brightness-110 active:translate-y-[1px] transition shadow-sm"
               >
-                Preventivo gratuito
+                Richiedi Preventivo
               </button>
             </div>
           </div>
