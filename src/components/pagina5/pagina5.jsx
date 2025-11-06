@@ -60,8 +60,20 @@ export default function PreventivoApostille() {
                     ))}
                 </select>
                 {/* caret */}
-                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
-                  ▾
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
+                  <svg
+                    className="w-4 h-4 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M6 8l4 4 4-4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -92,8 +104,20 @@ export default function PreventivoApostille() {
                       </option>
                     ))}
                 </select>
-                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
-                  ▾
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
+                  <svg
+                    className="w-4 h-4 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M6 8l4 4 4-4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -102,10 +126,12 @@ export default function PreventivoApostille() {
             <div className="md:col-span-2">
               <button
                 type="submit"
-                className="w-full h-12 rounded-lg bg-[#5897FF] text-white font-semibold
-                           hover:brightness-110 active:translate-y-[1px] transition shadow-sm"
+                className="w-full h-14 rounded-lg bg-[#5897FF] text-white font-semibold
+               hover:brightness-110 active:translate-y-[1px] transition shadow-sm
+               flex flex-col items-center justify-center leading-tight"
               >
-                {t("preventivo.cta")}
+                <span>{t("preventivo.cta").split(" ")[0]}</span>
+                <span>{t("preventivo.cta").split(" ").slice(1).join(" ")}</span>
               </button>
             </div>
           </div>

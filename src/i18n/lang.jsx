@@ -5,7 +5,13 @@ const dictionaries = {
   it: {
     locale: "it",
     navbar: {
-      menu: ["Apostille", "Servizi", "Come funziona", "Risorse", "Assistenza"],
+      menu: [
+        "Apostille",
+        "Servizi",
+        "Come funziona",
+        "Risorse",
+        // "Assistenza"
+      ],
       cta: "OTTIENI L'APOSTILLE",
     },
     hero: {
@@ -31,12 +37,7 @@ const dictionaries = {
     showcase: {
       title: "Documenti apostillati nell’ultimo mese",
       subtitle: "Apostilliamo più di 50 documenti al mese",
-      images: [
-        { alt: "Esempio di apostille su certificato n. 1" },
-        { alt: "Esempio di apostille su certificato n. 2" },
-        { alt: "Esempio di apostille su certificato n. 3" },
-        { alt: "Esempio di apostille su certificato n. 4" },
-      ],
+      images: [{ alt: "" }, { alt: "" }, { alt: "" }, { alt: "" }],
     },
     preventivo: {
       title:
@@ -118,7 +119,7 @@ const dictionaries = {
         "Servicios",
         "Cómo funciona",
         "Recursos",
-        "Asistencia",
+        // "Asistencia",
       ],
       cta: "OBTENER APOSTILLA",
     },
