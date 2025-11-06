@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "¿Qué es la Apostilla?",
+    "answer": "La Apostilla es una certificación internacional que valida la autenticidad de documentos públicos para su uso en los países que forman parte del Convenio de La Haya de 1961; es un sello o anotación que certifica la firma, el cargo y el sello de la autoridad que emitió el documento original."
+  },
+  {
+    "id": 2,
+    "question": "¿Para qué sirve la Apostilla?",
+    "answer": "Permite que un documento emitido en un país sea reconocido legalmente en otro sin trámites adicionales de legalización consular; simplifica el uso de documentos peruanos en el exterior y viceversa."
+  },
+  {
+    "id": 3,
+    "question": "¿Qué documentos se pueden apostillar?",
+    "answer": "Certificados de nacimiento, matrimonio y defunción; diplomas y certificados académicos; poderes notariales; certificados de antecedentes penales y policiales; documentos judiciales; certificados de trabajo; actas notariales; traducciones certificadas u oficiales realizadas por traductores colegiados o públicos juramentados."
+  },
+  {
+    "id": 4,
+    "question": "¿Qué documentos NO se pueden apostillar?",
+    "answer": "Documentos emitidos por funcionarios diplomáticos o consulares; documentos administrativos vinculados a operaciones comerciales o aduaneras; documentos privados no certificados por una autoridad pública."
+  },
+  {
+    "id": 5,
+    "question": "¿Dónde se realiza la Apostilla en el Perú?",
+    "answer": "Se puede obtener en el Ministerio de Relaciones Exteriores en Lima y en los centros MAC (Norte, Sur, Este, Callao); en provincias está disponible en las Oficinas Desconcentradas (ODE) de Arequipa, Cusco, Trujillo, Piura e Iquitos."
+  },
+  {
+    "id": 6,
+    "question": "¿Cuánto tiempo toma el trámite de Apostilla?",
+    "answer": "El tiempo varía según la oficina, el volumen de usuarios y la cantidad de documentos."
+  },
+  {
+    "id": 7,
+    "question": "¿Puedo apostillar documentos sin estar en el Perú?",
+    "answer": "Sí; podemos gestionar el trámite por ti mediante poder o autorización específica y enviar los documentos apostillados a tu país de residencia."
+  },
+  {
+    "id": 8,
+    "question": "¿La Apostilla tiene fecha de vencimiento?",
+    "answer": "No, la Apostilla no vence; sin embargo, algunas instituciones exigen documentos emitidos recientemente (3 o 6 meses), especialmente certificados penales o policiales."
+  },
+  {
+    "id": 9,
+    "question": "¿Qué países aceptan la Apostilla?",
+    "answer": "Todos los países miembros del Convenio de La Haya de 1961; más de 120 naciones, entre ellas Italia, España, Estados Unidos, Francia, Alemania, Reino Unido, Argentina, Chile, Colombia, México y otros."
+  },
+  {
+    "id": 10,
+    "question": "¿Debo traducir mis documentos antes de apostillarlos?",
+    "answer": "Depende del país de destino; en general: primero se apostilla el original, luego se realiza la traducción oficial y finalmente se apostilla la firma del traductor o del decano del Colegio de Traductores."
+  },
+  {
+    "id": 11,
+    "question": "¿Qué es la legalización de la firma del traductor?",
+    "answer": "Como el traductor certificado no es un funcionario público, su firma debe ser legalizada por el Colegio de Traductores del Perú (CTP) antes de que una traducción pueda apostillarse."
+  },
+  {
+    "id": 12,
+    "question": "¿Cuánto demora la legalización de la firma del traductor?",
+    "answer": "Generalmente toma de 2 a 3 días hábiles; puede variar según la cantidad de documentos."
+  },
+  {
+    "id": 13,
+    "question": "¿Puedo apostillar un documento ya traducido?",
+    "answer": "Sí, pero solo respetando el orden correcto: apostilla del original → traducción oficial → legalización de la firma del traductor → apostilla de la traducción."
+  },
+  {
+    "id": 14,
+    "question": "¿Se pueden apostillar copias certificadas?",
+    "answer": "Sí, si la copia está certificada por notario o por la autoridad emisora; sin embargo, no se pueden apostillar copias de actas de estado civil, pasaportes, documentos de identidad, certificados académicos originales o antecedentes penales/policiales."
+  },
+  {
+    "id": 15,
+    "question": "¿Cuál es la diferencia entre Apostilla y Legalización?",
+    "answer": "La Apostilla se utiliza en países del Convenio de La Haya y es un proceso simplificado; la Legalización es para países no miembros y requiere además certificación consular."
+  },
+  {
+    "id": 16,
+    "question": "¿Qué hago si mi documento apostillado es rechazado en el exterior?",
+    "answer": "Verifica que el país pertenezca al Convenio de La Haya; que la Apostilla sea legible; que se cumplan los requisitos de la institución; y que la traducción, si existe, sea oficial y esté legalizada correctamente."
+  },
+  {
+    "id": 17,
+    "question": "¿Cuántas Apostillas necesito si usaré el documento en varios países?",
+    "answer": "Una sola Apostilla es válida para todos los países miembros, salvo que una institución exija documentos originales por separado."
+  },
+  {
+    "id": 18,
+    "question": "¿Puedo apostillar documentos extranjeros en el Perú?",
+    "answer": "No; los documentos deben apostillarse en el país donde fueron emitidos."
+  },
+  {
+    "id": 19,
+    "question": "¿Ofrecen servicio de recojo y entrega de documentos?",
+    "answer": "Sí; ofrecemos recojo a domicilio/oficina, gestión integral del proceso y entrega o envío nacional/internacional."
+  },
+  {
+    "id": 20,
+    "question": "¿Cuál es la diferencia entre apostilla física y digital?",
+    "answer": "La Apostilla física es un sello en un documento en papel; la digital es un PDF con firma digital obtenido en línea; ambas tienen la misma validez legal."
+  },
+  {
+    "id": 21,
+    "question": "¿Qué países no aceptan la apostilla digital?",
+    "answer": "Italia no acepta apostillas digitales; algunos países europeos y latinoamericanos tienen limitaciones; siempre se debe verificar con la institución receptora."
+  },
+  {
+    "id": 22,
+    "question": "¿Qué es la legalización previa a la apostilla?",
+    "answer": "Es la certificación de la firma de la autoridad que emitió el documento; se requiere para documentos notariales, traducciones del CTP, actas de estado civil provinciales, certificados profesionales y otros."
+  },
+  {
+    "id": 23,
+    "question": "¿Puedo llevar un documento notarial directamente a apostillar?",
+    "answer": "No; primero se debe legalizar la firma del notario en el Colegio de Notarios de Lima y luego proceder con la Apostilla."
+  },
+  {
+    "id": 24,
+    "question": "¿Puedo apostillar la traducción si el original no está apostillado?",
+    "answer": "No; la Apostilla de la traducción certifica únicamente la firma del traductor; el documento original debe estar apostillado previamente."
+  }
+]

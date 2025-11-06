@@ -72,7 +72,7 @@ function WhatsAppFloatingBtn() {
       href={`https://wa.me/393471234567?text=${msg}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold px-5 py-3 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200 z-[9999]"
+      className="fixed bottom-8 right-20 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold px-5 py-3 rounded-full flex items-center gap-2 shadow-lg transition-all duration-200 z-[9999]"
     >
       <FaWhatsapp className="text-2xl" />
       <span>{t("hero.whatsappCta")}</span>

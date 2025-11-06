@@ -1,35 +1,18 @@
 // src/pages/PreventivoApostille.jsx
 import { useState } from "react";
+import { useT } from "../../i18n/lang";
 
 export default function PreventivoApostille() {
+  const t = useT();
   const [docType, setDocType] = useState("");
   const [country, setCountry] = useState("");
 
-  const documentTypes = [
-    "Certificato di nascita",
-    "Certificato di matrimonio",
-    "Casellario giudiziale",
-    "Titolo di studio",
-    "Procura / documento notarile",
-    "Altro",
-  ];
-
-  const countries = [
-    "Italia",
-    "Stati Uniti",
-    "Regno Unito",
-    "Spagna",
-    "Francia",
-    "Germania",
-    "Australia",
-    "Perù",
-    "Giappone",
-    "Hong Kong",
-  ];
+  const documentTypes = t("preventivo.documentTypes") || [];
+  const countries = t("preventivo.countries") || [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: integra la tua logica (router, API, ecc.)
+    // TODO: integra router/API; qui solo esempio
     console.log({ docType, country });
   };
 
@@ -42,7 +25,7 @@ export default function PreventivoApostille() {
         >
           {/* Titolo */}
           <h1 className="text-2xl md:text-4xl font-extrabold text-[#1f2937]">
-            Richiedi un preventivo gratis per apostillare documenti peruviani
+            {t("preventivo.title")}
           </h1>
 
           {/* Divider */}
@@ -53,9 +36,9 @@ export default function PreventivoApostille() {
             {/* Tipo di documento */}
             <div className="md:col-span-5">
               <label className="block text-[17px] text-[#374151] font-medium mb-2">
-                Tipo di documento:{" "}
+                {t("preventivo.labels.docType")}:{" "}
                 <span className="text-red-600" aria-hidden="true">
-                  *
+                  {t("preventivo.labels.requiredMark")}
                 </span>
               </label>
               <div className="relative">
@@ -66,12 +49,15 @@ export default function PreventivoApostille() {
                   className="w-full h-12 rounded-lg border border-gray-300 bg-white px-4 pr-10 text-gray-700
                              focus:outline-none focus:ring-2 focus:ring-[#5897ff] focus:border-[#5897ff] transition"
                 >
-                  <option value="">Seleziona il tipo di documento</option>
-                  {documentTypes.map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
+                  <option value="">
+                    {t("preventivo.placeholders.selectDocType")}
+                  </option>
+                  {Array.isArray(documentTypes) &&
+                    documentTypes.map((d) => (
+                      <option key={d} value={d}>
+                        {d}
+                      </option>
+                    ))}
                 </select>
                 {/* caret */}
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
@@ -80,12 +66,12 @@ export default function PreventivoApostille() {
               </div>
             </div>
 
-            {/* Paese di emissione */}
+            {/* Paese di destinazione */}
             <div className="md:col-span-5">
               <label className="block text-[17px] text-[#374151] font-medium mb-2">
-                Paese di destinazione:{" "}
+                {t("preventivo.labels.country")}:{" "}
                 <span className="text-red-600" aria-hidden="true">
-                  *
+                  {t("preventivo.labels.requiredMark")}
                 </span>
               </label>
               <div className="relative">
@@ -96,12 +82,15 @@ export default function PreventivoApostille() {
                   className="w-full h-12 rounded-lg border border-gray-300 bg-white px-4 pr-10 text-gray-700
                              focus:outline-none focus:ring-2 focus:ring-[#5897ff] focus:border-[#5897ff] transition"
                 >
-                  <option value="">Seleziona il paese</option>
-                  {countries.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
+                  <option value="">
+                    {t("preventivo.placeholders.selectCountry")}
+                  </option>
+                  {Array.isArray(countries) &&
+                    countries.map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
                 </select>
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
                   ▾
@@ -116,7 +105,7 @@ export default function PreventivoApostille() {
                 className="w-full h-12 rounded-lg bg-[#5897FF] text-white font-semibold
                            hover:brightness-110 active:translate-y-[1px] transition shadow-sm"
               >
-                Richiedi Preventivo
+                {t("preventivo.cta")}
               </button>
             </div>
           </div>

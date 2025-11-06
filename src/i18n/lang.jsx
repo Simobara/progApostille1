@@ -1,4 +1,4 @@
-// i18n minimale con Context + localStorage
+// src/i18n/lang.jsx
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const dictionaries = {
@@ -38,18 +38,59 @@ const dictionaries = {
         { alt: "Esempio di apostille su certificato n. 4" },
       ],
     },
+    preventivo: {
+      title:
+        "Richiedi un preventivo gratis per apostillare documenti peruviani",
+      labels: {
+        docType: "Tipo di documento",
+        country: "Paese di destinazione",
+        requiredMark: "*",
+      },
+      placeholders: {
+        selectDocType: "Seleziona il tipo di documento",
+        selectCountry: "Seleziona il paese",
+      },
+      cta: "Richiedi Preventivo",
+      documentTypes: [
+        "Certificato di nascita",
+        "Certificato di matrimonio",
+        "Casellario giudiziale",
+        "Titolo di studio",
+        "Procura / documento notarile",
+        "Altro",
+      ],
+      countries: [
+        "Italia",
+        "Stati Uniti",
+        "Regno Unito",
+        "Spagna",
+        "Francia",
+        "Germania",
+        "Australia",
+        "Perù",
+        "Giappone",
+        "Hong Kong",
+      ],
+    },
+    faq: {
+      title: "FAQ / Domande frequenti",
+      searchLabel: "Cerca nelle FAQ",
+      searchPlaceholder:
+        "Cerca una parola chiave (es. traduzione, digitale, Italia)",
+      results: "Risultati",
+      expandAll: "Espandi tutto",
+      collapseAll: "Comprimi tutto",
+      expandAllAria: "Espandi tutto",
+      collapseAllAria: "Comprimi tutto",
+      copyLink: (id) => `Copia link diretto alla FAQ ${id}`,
+      copied: "Copiato!",
+    },
   },
 
   "es-PE": {
     locale: "es-PE",
     navbar: {
-      menu: [
-        "Apostilla",
-        "Servicios",
-        "Cómo funciona",
-        "Recursos",
-        "Asistencia",
-      ],
+      menu: ["Apostilla", "Servicios", "Cómo funciona", "Recursos", "Asistencia"],
       cta: "OBTENER APOSTILLA",
     },
     hero: {
@@ -67,7 +108,6 @@ const dictionaries = {
     sidebar: {
       lineParts: ["Elegido por", "empresas líderes a", "nivel mundial"],
     },
-
     guarantee: {
       message:
         "El reconocimiento y la aceptación de la Apostilla de La Haya están garantizados por",
@@ -77,6 +117,54 @@ const dictionaries = {
       title: "Documentos apostillados en el último mes",
       subtitle: "Apostillamos más de 50 documentos al mes",
       images: [{ alt: "" }, { alt: "" }, { alt: "" }, { alt: "" }],
+    },
+    preventivo: {
+      title:
+        "Solicita una cotización gratuita para apostillar documentos peruanos",
+      labels: {
+        docType: "Tipo de documento",
+        country: "País de destino",
+        requiredMark: "*",
+      },
+      placeholders: {
+        selectDocType: "Selecciona el tipo de documento",
+        selectCountry: "Selecciona el país",
+      },
+      cta: "Solicitar cotización",
+      documentTypes: [
+        "Certificado de nacimiento",
+        "Certificado de matrimonio",
+        "Antecedentes penales",
+        "Título de estudio",
+        "Poder / documento notarial",
+        "Otro",
+      ],
+      countries: [
+        "Italia",
+        "Estados Unidos",
+        "Reino Unido",
+        "España",
+        "Francia",
+        "Alemania",
+        "Australia",
+        "Perú",
+        "Japón",
+        "Hong Kong",
+      ],
+    },
+    // 🔧 PRIMA era fuori. Ora il blocco FAQ è dentro "es-PE".
+    faq: {
+      title: "FAQ / Preguntas frecuentes",
+      searchLabel: "Buscar en las FAQ",
+      searchPlaceholder:
+        "Busca una palabra clave (ej. traducción, digital, Italia)",
+      results: "Resultados",
+      expandAll: "Expandir todo",
+      collapseAll: "Contraer todo",
+      expandAllAria: "Expandir todo",
+      collapseAllAria: "Contraer todo",
+      copyLink: (id) => `Copiar enlace directo a la FAQ ${id}`,
+      copied: "¡Copiado!",
     },
   },
 };

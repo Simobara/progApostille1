@@ -1,12 +1,14 @@
 // src/components/pagina6/pagina6.jsx
-// FAQ con ricerca + espandi/comprimi tutto
-// - Click su tutta la barra domanda = toggle
-// - "Comprimi tutto" abilitato se almeno una sezione (tra le filtrate) è aperta
-// - "Espandi tutto" disattivato quando tutte le filtrate sono aperte
-// - "Copia link" copia l'URL #faq-<id> senza aprire/scorrere né togglare
+// FAQ con ricerca + espandi/comprimi tutto + i18n dataset by lang
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import faqDataRaw from "../../json/faq.json";
+import { useLang, useT } from "../../i18n/lang";
+
+// Dataset per lingua (mantieni gli stessi ID tra lingue!)
+import faqEs from "../../json/faq.es.json";
+import faqIt from "../../json/faq.it.json";
+// (opzionale) se vuoi tenere anche un fallback:
+// import faqFallback from "../../json/faq.json";
 
 // --- utils ---
 const norm = (s) => (s || "").toLowerCase();
@@ -57,7 +59,9 @@ function Arrow({ open }) {
 
 // Bottone copia link: non naviga, non toggla
 function CopyLinkButton({ idNum }) {
+  const t = useT();
   const [copied, setCopied] = useState(false);
+
   const onCopy = async (e) => {
     e.stopPropagation(); // non togglare l'accordion
     try {
@@ -72,17 +76,23 @@ function CopyLinkButton({ idNum }) {
       setTimeout(() => setCopied(false), 1200);
     }
   };
-  //   return (
-  //     <button
-  //       type="button"
-  //       onClick={onCopy}
-  //       className="text-xs rounded border border-gray-300 px-2 py-1 hover:bg-gray-50 text-gray-700"
-  //       aria-live="polite"
-  //       aria-label={`Copia link diretto alla FAQ ${idNum}`}
-  //     >
-  //       {/* {copied ? "Copiato!" : "Copia link"} */}
-  //     </button>
-  //   );
+
+  const labelFn = t("faq.copyLink");
+  const label =
+    typeof labelFn === "function" ? labelFn(idNum) : `Copy link FAQ ${idNum}`;
+
+  // return (
+  //   <button
+  //     type="button"
+  //     onClick={onCopy}
+  //     className="text-xs rounded border border-gray-300 px-2 py-1 hover:bg-gray-50 text-gray-700"
+  //     aria-live="polite"
+  //     aria-label={label}
+  //     title={label}
+  //   >
+  //     {copied ? t("faq.copied") || "Copiato!" : "⎘"}
+  //   </button>
+  // );
 }
 
 // Item CONTROLLATO: lo stato open arriva dal parent
@@ -102,22 +112,6 @@ function AccordionItem({ idNum, title, children, isOpen, onToggle }) {
     if (isOpen) setMaxH(el.scrollHeight);
     return () => ro.disconnect();
   }, [isOpen]);
-
-  // apri se l'hash combacia al primo mount
-  //   useEffect(() => {
-  //     if (typeof window === "undefined") return;
-  //     const hash = window.location.hash.replace("#", "");
-  //     if (hash === `faq-${idNum}`) {
-  //       onToggle(idNum, true);
-  //       requestAnimationFrame(() => {
-  //         panelRef.current?.parentElement?.scrollIntoView({
-  //           behavior: "smooth",
-  //           block: "start",
-  //         });
-  //       });
-  //     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, []);
 
   // click su TUTTA la barra titolo = toggle
   const onHeaderClick = () => onToggle(idNum, !isOpen);
@@ -163,7 +157,18 @@ function AccordionItem({ idNum, title, children, isOpen, onToggle }) {
 }
 
 export default function Pagina6FaqApostille() {
-  const data = useMemo(() => faqDataRaw || [], []);
+  const { lang } = useLang();
+  const t = useT();
+
+  // Scegli dataset per lingua, con fallback all'italiano
+  const data = useMemo(() => {
+    if (lang === "es-PE" && Array.isArray(faqEs)) return faqEs;
+    if (lang === "it" && Array.isArray(faqIt)) return faqIt;
+    // fallback se manca il file di quella lingua
+    return Array.isArray(faqIt) ? faqIt : [];
+    // Se vuoi usare un vecchio faq.json come extra fallback:
+    // return Array.isArray(faqFallback) ? faqFallback : [];
+  }, [lang]);
 
   // query string iniziale
   const initialQ = useMemo(() => {
@@ -193,10 +198,8 @@ export default function Pagina6FaqApostille() {
   }, [query]);
 
   // ---- Stato open controllato dal parent ----
-  // set di id aperti
   const [openIds, setOpenIds] = useState(() => new Set());
 
-  // se l’utente clicca “Espandi tutto” o “Comprimi tutto”
   const allFilteredIds = useMemo(() => filtered.map((f) => f.id), [filtered]);
   const totalFiltered = allFilteredIds.length;
 
@@ -227,7 +230,6 @@ export default function Pagina6FaqApostille() {
     });
   };
 
-  // toggle singolo
   const handleToggleOne = (id, open) => {
     setOpenIds((prev) => {
       const next = new Set(prev);
@@ -242,12 +244,8 @@ export default function Pagina6FaqApostille() {
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <div>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0b0b0b]">
-            FAQ / Domande Frequenti
+            {t("faq.title") || "FAQ"}
           </h2>
-          {/* <p className="mt-1 text-gray-600"> */}
-          {/* Clicca la barra della domanda per aprire/chiudere. Usa la ricerca
-            per filtrare. */}
-          {/* </p> */}
         </div>
 
         <div className="flex items-center gap-2">
@@ -263,10 +261,10 @@ export default function Pagina6FaqApostille() {
                 ? "text-gray-400 bg-gray-50 cursor-not-allowed"
                 : "hover:bg-gray-50"
             }`}
-            aria-label="Espandi tutto"
+            aria-label={t("faq.expandAllAria") || "Espandi tutto"}
             aria-pressed={allOpenFiltered ? "true" : "false"}
           >
-            Espandi tutto
+            {t("faq.expandAll") || "Espandi tutto"}
           </button>
           <button
             type="button"
@@ -277,10 +275,10 @@ export default function Pagina6FaqApostille() {
                 ? "text-gray-400 bg-gray-50 cursor-not-allowed"
                 : "hover:bg-gray-50"
             }`}
-            aria-label="Comprimi tutto"
+            aria-label={t("faq.collapseAllAria") || "Comprimi tutto"}
             aria-pressed={!anyOpenFiltered ? "true" : "false"}
           >
-            Comprimi tutto
+            {t("faq.collapseAll") || "Comprimi tutto"}
           </button>
         </div>
       </div>
@@ -288,13 +286,16 @@ export default function Pagina6FaqApostille() {
       {/* Ricerca */}
       <div className="mt-4">
         <label className="sr-only" htmlFor="faq-search">
-          Cerca nelle FAQ
+          {t("faq.searchLabel") || "Cerca nelle FAQ"}
         </label>
         <div className="relative">
           <input
             id="faq-search"
             type="search"
-            placeholder="Cerca una parola chiave (es. traduzione, digitale, Italia)"
+            placeholder={
+              t("faq.searchPlaceholder") ||
+              "Cerca una parola chiave (es. traduzione, digitale, Italia)"
+            }
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 pr-10 text-[15px] outline-none focus:ring-2 focus:ring-blue-200"
@@ -313,7 +314,7 @@ export default function Pagina6FaqApostille() {
         </div>
         {qNorm && (
           <p className="mt-1 text-sm text-gray-500">
-            Risultati: {filtered.length}
+            {t("faq.results") || "Risultati"}: {filtered.length}
           </p>
         )}
       </div>
