@@ -1,10 +1,10 @@
 // src/pages/ApostilleShowcase.jsx
 export default function ApostilleShowcase() {
   const images = [
-    { src: "/images/apostille1.png", alt: "" },
-    { src: "/images/apostille2.png", alt: "" },
-    { src: "/images/apostille3.png", alt: "" },
-    { src: "/images/apostille4.png", alt: "" },
+    { src: "/images/apostille1.jpeg", alt: "" },
+    { src: "/images/apostille2.jpeg", alt: "" },
+    { src: "/images/apostille3.jpeg", alt: "" },
+    { src: "/images/apostille4.jpeg", alt: "" },
   ];
 
   return (
