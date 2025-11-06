@@ -72,17 +72,17 @@ function CopyLinkButton({ idNum }) {
       setTimeout(() => setCopied(false), 1200);
     }
   };
-  return (
-    <button
-      type="button"
-      onClick={onCopy}
-      className="text-xs rounded border border-gray-300 px-2 py-1 hover:bg-gray-50 text-gray-700"
-      aria-live="polite"
-      aria-label={`Copia link diretto alla FAQ ${idNum}`}
-    >
-      {/* {copied ? "Copiato!" : "Copia link"} */}
-    </button>
-  );
+  //   return (
+  //     <button
+  //       type="button"
+  //       onClick={onCopy}
+  //       className="text-xs rounded border border-gray-300 px-2 py-1 hover:bg-gray-50 text-gray-700"
+  //       aria-live="polite"
+  //       aria-label={`Copia link diretto alla FAQ ${idNum}`}
+  //     >
+  //       {/* {copied ? "Copiato!" : "Copia link"} */}
+  //     </button>
+  //   );
 }
 
 // Item CONTROLLATO: lo stato open arriva dal parent
