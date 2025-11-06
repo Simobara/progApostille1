@@ -127,7 +127,7 @@ function AccordionItem({ idNum, title, children, isOpen, onToggle }) {
       <button
         type="button"
         className={`w-full flex items-start gap-3 text-left py-4 group cursor-pointer ${
-          isOpen ? "bg-[#dac99c]" : "bg-white"
+          isOpen ? "bg-[#f2e3b8]" : "bg-white"
         }`}
         aria-expanded={isOpen}
         aria-controls={`faq-panel-${id}`}
@@ -244,10 +244,10 @@ export default function Pagina6FaqApostille() {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0b0b0b]">
             FAQ / Domande Frequenti
           </h2>
-          <p className="mt-1 text-gray-600">
-            Clicca la barra della domanda per aprire/chiudere. Usa la ricerca
-            per filtrare.
-          </p>
+          {/* <p className="mt-1 text-gray-600"> */}
+          {/* Clicca la barra della domanda per aprire/chiudere. Usa la ricerca
+            per filtrare. */}
+          {/* </p> */}
         </div>
 
         <div className="flex items-center gap-2">
