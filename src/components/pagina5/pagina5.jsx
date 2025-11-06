@@ -42,7 +42,7 @@ export default function PreventivoApostille() {
         >
           {/* Titolo */}
           <h1 className="text-2xl md:text-4xl font-extrabold text-[#1f2937]">
-            Richiedi un preventivo gratuito per l&apos;Apostille
+            Richiedi un preventivo gratis per apostillare documenti peruviani
           </h1>
 
           {/* Divider */}
@@ -83,7 +83,7 @@ export default function PreventivoApostille() {
             {/* Paese di emissione */}
             <div className="md:col-span-5">
               <label className="block text-[17px] text-[#374151] font-medium mb-2">
-                Paese di emissione:{" "}
+                Paese di destinazione:{" "}
                 <span className="text-red-600" aria-hidden="true">
                   *
                 </span>
