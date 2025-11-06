@@ -85,12 +85,41 @@ const dictionaries = {
       copyLink: (id) => `Copia link diretto alla FAQ ${id}`,
       copied: "Copiato!",
     },
+    footer: {
+      menuTitle: "MENÙ",
+      menuItems: {
+        apostille: "Apostille",
+        services: "Servizi",
+        submenu: {
+          apostilleDocs: "Apostille dei documenti",
+          certifiedCopy: "Copia certificata con Apostille",
+        },
+      },
+
+      magazineTitle: "RIVISTA",
+      magazineText:
+        "Iscriviti alla nostra rivista e ricevi offerte e novità direttamente nella tua casella di posta. Ottieni accesso prioritario a nuove funzioni e strumenti!",
+      newsletterPlaceholder: "Email...",
+      newsletterCta: "ISCRIVITI",
+
+      brandTitle: "APOSTILLE ONLINE",
+      brandDescription:
+        "Il servizio di Apostille accreditato ti permette di ottenere un'apostilla per qualsiasi documento (ufficiale, notarile, civile, aziendale o privato) emesso in qualsiasi paese del mondo.",
+
+      copyrightSuffix: "Apostille Online — Tutti i diritti riservati.",
+    },
   },
 
   "es-PE": {
     locale: "es-PE",
     navbar: {
-      menu: ["Apostilla", "Servicios", "Cómo funciona", "Recursos", "Asistencia"],
+      menu: [
+        "Apostilla",
+        "Servicios",
+        "Cómo funciona",
+        "Recursos",
+        "Asistencia",
+      ],
       cta: "OBTENER APOSTILLA",
     },
     hero: {
@@ -165,6 +194,30 @@ const dictionaries = {
       collapseAllAria: "Contraer todo",
       copyLink: (id) => `Copiar enlace directo a la FAQ ${id}`,
       copied: "¡Copiado!",
+    },
+
+    footer: {
+      menuTitle: "MENÚ",
+      menuItems: {
+        apostille: "Apostilla",
+        services: "Servicios",
+        submenu: {
+          apostilleDocs: "Apostilla de documentos",
+          certifiedCopy: "Copia certificada con Apostilla",
+        },
+      },
+
+      magazineTitle: "REVISTA",
+      magazineText:
+        "Suscríbete a nuestra revista y recibe ofertas y novedades directamente en tu bandeja de entrada. ¡Obtén acceso prioritario a nuevas funciones y herramientas!",
+      newsletterPlaceholder: "Correo electrónico...",
+      newsletterCta: "SUSCRIBIRSE",
+
+      brandTitle: "APOSTILLE ONLINE",
+      brandDescription:
+        "El servicio de Apostilla acreditado te permite obtener una apostilla para cualquier documento (oficial, notarial, civil, empresarial o privado) emitido en cualquier país del mundo.",
+
+      copyrightSuffix: "Apostille Online — Todos los derechos reservados.",
     },
   },
 };
