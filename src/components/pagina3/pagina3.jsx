@@ -1,17 +1,19 @@
 import { FiCheckCircle } from "react-icons/fi";
+import { useT } from "../../i18n/lang";
 
 /**
- * Banner di garanzia/nota informativa.
- * Props:
- * - message: testo principale (stringa o JSX)
- * - brand: nome evidenziato in grassetto (es. "ApostilleGarant")
+ * Banner di garanzia/nota informativa (i18n-ready).
+ * Props (tutte opzionali):
+ * - message: testo principale (stringa o JSX). Se assente, usa i18n: guarantee.message
+ * - brand: nome evidenziato in grassetto. Se assente, usa i18n: guarantee.brand
  * - className: per aggiungere/override di stili tailwind
  */
-export default function GuaranteeBanner({
-  message = "Il riconoscimento e l'accettazione dell'Apostille dell'Aja (La Haya) sono garantiti da",
-  brand = "ApostilleGarant™",
-  className = "",
-}) {
+export default function GuaranteeBanner({ message, brand, className = "" }) {
+  const t = useT();
+
+  const resolvedMessage = message ?? t("guarantee.message");
+  const resolvedBrand = brand ?? t("guarantee.brand");
+
   return (
     <div
       className={[
@@ -24,18 +26,21 @@ export default function GuaranteeBanner({
       role="status"
       aria-live="polite"
     >
-      <span className="shrink-0">
+      <span className="shrink-0" aria-hidden="true">
         <FiCheckCircle className="text-emerald-500" size={28} />
       </span>
 
       <p className="text-[17px] sm:text-lg leading-snug">
-        {typeof message === "string" ? (
+        {typeof resolvedMessage === "string" ? (
           <>
-            {message}{" "}
-            <strong className="font-semibold text-slate-700">{brand}</strong>
+            {resolvedMessage}{" "}
+            <strong className="font-semibold text-slate-700">
+              {resolvedBrand}
+            </strong>
           </>
         ) : (
-          message
+          // Se passi JSX personalizzato in `message`, lo rendiamo così com'è
+          resolvedMessage
         )}
       </p>
     </div>

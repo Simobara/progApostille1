@@ -1,16 +1,31 @@
-import { useEffect, useRef } from "react";
+// src/components/pagina2/pagina2.jsx (Sidebar)
+import { useEffect, useMemo, useRef } from "react";
+import { useT } from "../../i18n/lang";
+
 import itaLogo from "../../assets/itaLogo.png";
 import maerskLogo from "../../assets/maerskLogo.png";
 import mercedesLogo from "../../assets/mercedesLogo.png";
 import southLogo from "../../assets/southLogo.png";
 
-export default function Sidebar() {
-  const logos = [
-    { src: itaLogo, alt: "ITA" },
-    { src: southLogo, alt: "Sotheby's" },
-    { src: mercedesLogo, alt: "Mercedes-Benz" },
-    { src: maerskLogo, alt: "Maersk" },
-  ];
+export default function Sidebar({ speedPxPerSec = 50, gapPx = 110 }) {
+  const t = useT();
+
+  // 👇 fallback robusto nel caso manchino le chiavi o cambino forma
+  const parts = t("sidebar.lineParts");
+  const [p0, p1, p2] =
+    Array.isArray(parts) && parts.length >= 3
+      ? parts
+      : ["Scelto dalle", "aziende leader a", "livello mondiale"];
+
+  const logos = useMemo(
+    () => [
+      { src: itaLogo, alt: "ITA" },
+      { src: southLogo, alt: "Sotheby's" },
+      { src: mercedesLogo, alt: "Mercedes-Benz" },
+      { src: maerskLogo, alt: "Maersk" },
+    ],
+    []
+  );
 
   const wrapRef = useRef(null);
   const trackRef = useRef(null);
@@ -24,9 +39,13 @@ export default function Sidebar() {
     const track = trackRef.current;
     if (!wrap || !track) return;
 
-    const speed = 50; // px/s
-    const gapPx = 110; // spazio tra loghi
+    // Rispetta prefers-reduced-motion
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    // Stili iniziali
     track.style.display = "flex";
     track.style.alignItems = "center";
     track.style.justifyContent = "center";
@@ -36,13 +55,18 @@ export default function Sidebar() {
     offsetRef.current = 0;
     track.style.transform = `translateX(${offsetRef.current}px)`;
 
+    if (reduceMotion) {
+      // niente animazione; lascia i loghi statici
+      return;
+    }
+
     const step = (ts) => {
       if (!lastTsRef.current) lastTsRef.current = ts;
       const dt = (ts - lastTsRef.current) / 1000;
       lastTsRef.current = ts;
 
       if (!pausedRef.current) {
-        offsetRef.current -= speed * dt;
+        offsetRef.current -= speedPxPerSec * dt;
 
         const first = track.firstElementChild;
         if (first) {
@@ -52,36 +76,44 @@ export default function Sidebar() {
             offsetRef.current += firstWidth;
           }
         }
-
         track.style.transform = `translateX(${offsetRef.current}px)`;
       }
 
-      rafRef.current = requestAnimationFrame(step);
+      rafRef.current = window.requestAnimationFrame(step);
     };
 
-    rafRef.current = requestAnimationFrame(step);
+    rafRef.current = window.requestAnimationFrame(step);
 
     const pause = () => (pausedRef.current = true);
     const resume = () => (pausedRef.current = false);
+
     wrap.addEventListener("mouseenter", pause);
     wrap.addEventListener("mouseleave", resume);
+    // su mobile tocco = pausa
+    wrap.addEventListener("touchstart", pause, { passive: true });
+    wrap.addEventListener("touchend", resume);
 
     return () => {
       wrap.removeEventListener("mouseenter", pause);
       wrap.removeEventListener("mouseleave", resume);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      wrap.removeEventListener("touchstart", pause);
+      wrap.removeEventListener("touchend", resume);
+      if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [gapPx, speedPxPerSec]);
 
   return (
     <section className="w-full bg-gray-100 py-16 overflow-hidden flex justify-center">
       <div className="max-w-7xl w-full px-6">
         {/* Titolo */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
-            <span className="bg-blue-100 px-2">Scelto dalle</span>{" "}
-            <span className="bg-blue-100 px-2">aziende leader a</span>{" "}
-            <span className="bg-blue-100 px-2">livello mondiale</span>
+          <h2
+            className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight"
+            aria-label={`${p0} ${p1} ${p2}`}
+          >
+            <span className="bg-blue-100 px-2">{p0}</span>{" "}
+            <span className="bg-blue-100 px-2">{p1}</span>{" "}
+            <span className="bg-blue-100 px-2">{p2}</span>
           </h2>
         </div>
 
