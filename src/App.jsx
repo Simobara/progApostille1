@@ -12,6 +12,7 @@ import ApostilleFollower from "./components/apostilleCursor/apostilleFoll";
 import GuaranteeBanner from "./components/pagina3/pagina3";
 import ApostilleShowcase from "./components/pagina4/pagina4";
 import PreventivoApostille from "./components/pagina5/pagina5";
+import Pagina6FaqApostille from "./components/pagina6/pagina6";
 import Footer from "./components/pfooter/pfooter";
 import "./index.css";
 
@@ -115,6 +116,7 @@ export default function App() {
         </section>
         <ApostilleShowcase />
         <PreventivoApostille />
+        <Pagina6FaqApostille/>
       </main>
       <Footer />
     </div>
